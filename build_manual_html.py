@@ -350,8 +350,8 @@ TEMPLATE = """<!DOCTYPE html>
   <div id="content"></div>
 </main>
 <div class="fab">
-  <button id="theme" title="切换亮/暗主题">🌙</button>
   <button id="backtop" title="回到顶部">↑</button>
+  <button id="theme" title="切换亮/暗主题">🌙</button>
 </div>
 <script type="text/plain" id="md-source">__MD__</script>
 <script>__MARKED__</script>
