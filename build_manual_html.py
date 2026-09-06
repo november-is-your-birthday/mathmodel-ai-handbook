@@ -317,15 +317,16 @@ TEMPLATE = """<!DOCTYPE html>
   hr{border:none;border-top:1px solid var(--border);margin:30px 0}
   a{color:var(--accent2)}
 
-  #backtop{position:fixed;right:26px;bottom:26px;width:44px;height:44px;border:none;border-radius:14px;
-           background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:17px;cursor:pointer;
-           box-shadow:0 6px 18px color-mix(in srgb,var(--accent) 45%,transparent);z-index:25}
-  #backtop:hover{transform:translateY(-2px)}
+  .fab{position:fixed;right:26px;bottom:26px;display:flex;flex-direction:column;gap:10px;z-index:25}
+  .fab button{width:44px;height:44px;border:none;border-radius:14px;cursor:pointer;font-size:17px;
+              background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;
+              box-shadow:0 6px 18px color-mix(in srgb,var(--accent) 45%,transparent);transition:.15s}
+  .fab button:hover{transform:translateY(-2px)}
   ::-webkit-scrollbar{width:9px;height:9px}
   ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:6px}
   ::-webkit-scrollbar-thumb:hover{background:var(--muted)}
   @media (max-width:1024px){#sidebar{display:none}main{margin-left:0}.topbar{padding:10px 18px}#content{padding:22px 20px 90px}}
-  @media print{#sidebar,.topbar,#backtop{display:none}main{margin:0}#content{max-width:none;padding:0}}
+  @media print{#sidebar,.topbar,.fab{display:none}main{margin:0}#content{max-width:none;padding:0}}
 </style>
 </head>
 <body>
@@ -344,12 +345,14 @@ TEMPLATE = """<!DOCTYPE html>
 <main>
   <header class="topbar">
     <div id="crumb">数学建模 AI 手册</div>
-    <button id="theme" title="切换亮/暗主题">🌙</button>
-    <button id="backtop" title="回到顶部">↑</button>
     <div id="pbarwrap"><div id="pbar"></div></div>
   </header>
   <div id="content"></div>
 </main>
+<div class="fab">
+  <button id="theme" title="切换亮/暗主题">🌙</button>
+  <button id="backtop" title="回到顶部">↑</button>
+</div>
 <script type="text/plain" id="md-source">__MD__</script>
 <script>__MARKED__</script>
 <script>__APP__</script>
