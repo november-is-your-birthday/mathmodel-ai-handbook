@@ -4,6 +4,7 @@
 特性：亮/暗双主题、侧边可折叠目录树 + 滚动高亮、阅读进度条、全文搜索 + 关键词高亮、
      代码块一键复制、表格自适应、★ 标记高亮。仅依赖同目录 marked.min.js，产物离线可用。
 主题：Neubrutalism（硬边框 3px / 硬投影 5px 5px 0 / 高饱和平色 / 零渐变 / 直角）。
+产物：数学建模AI手册.html（分发用）+ index.html（GitHub Pages 入口，同内容）。
 用法：python build_manual_html.py
 """
 import json, pathlib
@@ -11,6 +12,7 @@ import json, pathlib
 BASE      = pathlib.Path(__file__).resolve().parent
 MD_PATH   = BASE / "数学建模AI手册.md"
 OUT_PATH  = BASE / "数学建模AI手册.html"
+INDEX_PATH = BASE / "index.html"      # GitHub Pages 站点入口，与成品同内容（自动生成，勿手改）
 MARKED    = BASE / "marked.min.js"
 
 md_text     = MD_PATH.read_text(encoding="utf-8")
@@ -486,3 +488,8 @@ html = (TEMPLATE
         .replace("__MD__", md_json))
 OUT_PATH.write_text(html, encoding="utf-8")
 print(f"OK  {OUT_PATH}  ({OUT_PATH.stat().st_size/1024:.0f} KB)")
+
+# GitHub Pages 只认目录下的 index.html 作为默认页。写成同一份内容，
+# 站点根路径即可直接打开手册，分享出去也不必带中文百分号编码的长链接。
+INDEX_PATH.write_text(html, encoding="utf-8")
+print(f"OK  {INDEX_PATH}  ({INDEX_PATH.stat().st_size/1024:.0f} KB)  <- Pages 入口")

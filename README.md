@@ -4,6 +4,7 @@
 
 **提示词 × 资源库 · 单文件离线可用**
 
+[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-GitHub%20Pages-6BCB77?style=flat-square&labelColor=000000&logo=github)](https://november-is-your-birthday.github.io/mathmodel-ai-handbook/)
 [![单文件](https://img.shields.io/badge/%E5%8D%95%E6%96%87%E4%BB%B6-%E7%A6%BB%E7%BA%BF%E5%8F%AF%E7%94%A8-FFD93D?style=flat-square&labelColor=000000)](./数学建模AI手册.html)
 [![主题](https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-Neubrutalism-4D96FF?style=flat-square&labelColor=000000)](#界面)
 [![Python](https://img.shields.io/badge/Python-3.x-6BCB77?style=flat-square&labelColor=000000)](#重新生成-html)
@@ -29,7 +30,7 @@
 ## 三种用法
 
 1. **HTML（推荐）**
-   双击 `数学建模AI手册.html`。左侧目录树点击跳转、顶部搜索框全文过滤（按 <kbd>/</kbd> 聚焦）、代码一键复制、亮暗主题切换、阅读进度条。单文件离线可用。
+   在线直接打开 **<https://november-is-your-birthday.github.io/mathmodel-ai-handbook/>**（GitHub Pages，无需下载）；或双击本地的 `数学建模AI手册.html`。左侧目录树点击跳转、顶部搜索框全文过滤（按 <kbd>/</kbd> 聚焦）、代码一键复制、亮暗主题切换、阅读进度条。单文件离线可用。
 2. **Markdown**
    在 VSCode / Typora / Obsidian 中打开 `数学建模AI手册.md`。不同编辑器对中文锚点的处理略有差异，跳转异常时改用 HTML 版或 `Ctrl+F`。
 3. **检索**
@@ -40,9 +41,11 @@
 | 文件 | 用途 |
 |---|---|
 | `数学建模AI手册.html` | 成品：双击即读的单文件手册（含内嵌 MD 源与渲染引擎） |
+| `index.html` | GitHub Pages 站点入口，构建脚本生成，**与成品同内容，勿手改** |
 | `数学建模AI手册.md` | **源文件**，要改内容改这份 |
 | `build_manual_html.py` | 构建脚本：把 MD 渲染成 HTML，内嵌 CSS 与交互逻辑 |
 | `marked.min.js` | Markdown 渲染引擎（v12.0.2，构建时读取并内嵌，仅构建期依赖） |
+| `.nojekyll` | 关闭 GitHub Pages 的 Jekyll 处理（纯静态站点无需构建） |
 | `screenshots/` | README 预览图 |
 | `LICENSE` | MIT 许可 |
 
@@ -75,9 +78,10 @@
 ```bash
 python build_manual_html.py
 # OK  .../数学建模AI手册.html  (114 KB)
+# OK  .../index.html  (114 KB)  <- Pages 入口
 ```
 
-要求 Python 3（**仅标准库**，无第三方依赖、无网络请求）。脚本会读取同目录的 `数学建模AI手册.md` 与 `marked.min.js`，把 CSS、交互 JS、MD 源一并内嵌，产出可直接分发的单文件 HTML。
+要求 Python 3（**仅标准库**，无第三方依赖、无网络请求）。脚本会读取同目录的 `数学建模AI手册.md` 与 `marked.min.js`，把 CSS、交互 JS、MD 源一并内嵌，产出可直接分发的单文件 HTML；同时把同一份内容写成 `index.html`，作为 GitHub Pages 的站点入口。
 
 完整更新流程：
 

@@ -1,0 +1,2 @@
+# 关闭 GitHub Pages 的 Jekyll 处理：本仓库是纯静态站点，
+# 无需构建，也不希望 Jekyll 触碰文件。
