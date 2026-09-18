@@ -8,6 +8,7 @@
 [![主题](https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-Neubrutalism-4D96FF?style=flat-square&labelColor=000000)](#界面)
 [![Python](https://img.shields.io/badge/Python-3.x-6BCB77?style=flat-square&labelColor=000000)](#重新生成-html)
 [![依赖](https://img.shields.io/badge/%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BE%9D%E8%B5%96-%E9%9B%B6-FF6B6B?style=flat-square&labelColor=000000)](#重新生成-html)
+[![License](https://img.shields.io/badge/License-MIT-FFD93D?style=flat-square&labelColor=000000)](./LICENSE)
 
 整理日期 2026-09-06 · 更新 2026-09-18
 
@@ -43,6 +44,7 @@
 | `build_manual_html.py` | 构建脚本：把 MD 渲染成 HTML，内嵌 CSS 与交互逻辑 |
 | `marked.min.js` | Markdown 渲染引擎（v12.0.2，构建时读取并内嵌，仅构建期依赖） |
 | `screenshots/` | README 预览图 |
+| `LICENSE` | MIT 许可 |
 
 ## 内容结构
 
@@ -97,9 +99,13 @@ git add -A && git commit -m "更新手册" && git push   # 3. 提交
 
 ## 许可与致谢
 
-- 本手册的**正文整理与提示词**可自由用于个人学习与交流，转载请注明出处。
-- 所收录的**第三方项目、论文、模板、数据源**版权归各自作者所有，本仓库仅作索引起点，请以原始站点为准。
-- 内容整理自公开网络资源，出处详见手册文末附录。AI 生成内容存在幻觉风险，**关键数据、引用与公式请务必自行交叉核验**。
+本仓库采用 **[MIT License](./LICENSE)**。
+
+- **自有内容**：手册正文（提示词文本、方法论整理）、`build_manual_html.py` 构建脚本、页面样式与交互逻辑，均可自由使用、修改、分发，**包括商业用途**，只需保留版权声明。无需另行署名或申请授权。
+- **第三方资源**：所收录的项目、论文、模板、数据源版权归各自作者所有，**其许可条款以原始站点为准**。本仓库仅提供索引与外链，未重新分发这些资源的正文；使用前请自行确认对应条款。
+- **免责**：内容整理自公开网络资源，AI 生成内容存在幻觉风险，**关键数据、引用与公式请务必自行交叉核验**。
+
+致谢：[marked](https://github.com/markedjs/marked)（MIT）提供 Markdown 渲染；界面视觉规范参考 [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)（MIT）的 Neubrutalism 风格条目。
 
 ---
 
